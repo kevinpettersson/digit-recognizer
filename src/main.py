@@ -1,14 +1,20 @@
 import torch
 from model.neural_network import Model
+from gui.app import App
 
 def main():
-    # Instantiate and load model with the weights
+     # Create model
     model = Model()
-    model.load_state_dict(torch.load("../mnist_model.pt"))
+
+    # Load learned weights
+    model.load_state_dict(torch.load("./mnist_model.pt"))
+    
+    # Switch to inference mode
     model.eval()
 
-    # Build UI
+    # Start GUI
+    App(model)
 
-
+    
 if __name__ == "__main__":
     main()
