@@ -62,7 +62,6 @@ class App:
 
     def predict(self):
         img = self.crop_image().resize((28, 28))
-        img.show()
 
         transform = transforms.ToTensor()
 
